@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "766611905129",
+    "project_id": "lynks-f1987",
+    "storage_bucket": "lynks-f1987.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766611905129:android:0d90eeb461e2ef9dde60f8",
+        "android_client_info": {
+          "package_name": "com.amate.lynks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766611905129-q3lb1cpagona741fjn40pk4vingseg9i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amate.lynks",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "766611905129-l4u5bip614de215qf3qpop94nn8ljd22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6zzgeOfQfp19qc_UExdFafpHwgQmr54M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766611905129-l4u5bip614de215qf3qpop94nn8ljd22.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "766611905129-lpqo9f0qe6fq1fenehb63pe9akphfbie.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.amate.lynks"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
