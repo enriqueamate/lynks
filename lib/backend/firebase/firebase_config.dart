@@ -10,7 +10,7 @@ Future initFirebase() async {
             projectId: "lynks-f1987",
             storageBucket: "lynks-f1987.appspot.com",
             messagingSenderId: "766611905129",
-            appId: "1:766611905129:web:eb83ef3c49348232de60f8"));
+            appId: "1:766611905129:web:32820fc1deda47fede60f8"));
   } else {
     await Firebase.initializeApp();
   }

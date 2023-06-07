@@ -106,6 +106,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => UpdateTaskPageWidget(
                 task: params.getParam('task', ParamType.Document),
               ),
+            ),
+            FFRoute(
+              name: 'passwordReset',
+              path: 'passwordReset',
+              builder: (context, params) => PasswordResetWidget(),
+            ),
+            FFRoute(
+              name: 'updateProfilePage',
+              path: 'updateProfilePage',
+              builder: (context, params) => UpdateProfilePageWidget(
+                username: params.getParam('username', ParamType.String),
+                userPhoto: params.getParam('userPhoto', ParamType.String),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

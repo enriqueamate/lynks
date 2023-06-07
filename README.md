@@ -1,9 +1,10 @@
 # Lynks
 
-A Flutter project
+A new Flutter project.
 
 ## Getting Started
-Aplicación para la materia de Programación Móvil y Servicios en la Nube
+
+FlutterFlow projects are built to run on the Flutter _stable_ release.
 
 ### Getting started continued:
 

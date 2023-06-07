@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "766611905129-eu16fe34raod76g9ca1gauol70ri45ba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amate.lynks",
+            "certificate_hash": "9aa451cdaf423c1b280cc50678520e62c43c4bef"
+          }
+        },
+        {
           "client_id": "766611905129-q3lb1cpagona741fjn40pk4vingseg9i.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -124,23 +124,59 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).secondary,
                         ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              21.0, 0.0, 0.0, 0.0),
-                          child: AuthUserStreamWidget(
-                            builder: (context) => Text(
-                              currentUserDisplayName,
-                              textAlign: TextAlign.start,
-                              style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: Color(0xC0FFFFFF),
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  21.0, 3.5, 0.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => Text(
+                                  currentUserDisplayName,
+                                  textAlign: TextAlign.start,
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineSmall
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: Color(0xC0FFFFFF),
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                ),
+                              ),
                             ),
-                          ),
+                            Flexible(
+                              child: FlutterFlowIconButton(
+                                borderRadius: 0.0,
+                                borderWidth: 0.0,
+                                buttonSize: 30.0,
+                                icon: Icon(
+                                  Icons.edit,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBtnText,
+                                  size: 15.0,
+                                ),
+                                onPressed: () async {
+                                  context.pushNamed(
+                                    'updateProfilePage',
+                                    queryParameters: {
+                                      'username': serializeParam(
+                                        currentUserDisplayName,
+                                        ParamType.String,
+                                      ),
+                                      'userPhoto': serializeParam(
+                                        valueOrDefault(
+                                            currentUserDocument?.photo, ''),
+                                        ParamType.String,
+                                      ),
+                                    }.withoutNulls,
+                                  );
+                                },
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Padding(
@@ -384,12 +420,18 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           queryTasksRecordCount(
                                                         queryBuilder: (tasksRecord) =>
                                                             tasksRecord
-                                                                .where('date',
+                                                                .where(
+                                                                    'date',
                                                                     isLessThan:
                                                                         getCurrentTimestamp)
-                                                                .where('user',
+                                                                .where(
+                                                                    'user',
                                                                     isEqualTo:
-                                                                        currentUserReference),
+                                                                        currentUserReference)
+                                                                .where(
+                                                                    'isCompleted',
+                                                                    isEqualTo:
+                                                                        false),
                                                       )))
                                                 .future,
                                         builder: (context, snapshot) {
